@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
 
-function Categories({ items }) {
+function Categories({ items, onClick }) {
   const [isActive, setIsActive] = useState(0);
+
+  const onSelectItem = (id) => {
+    setIsActive(id);
+    onClick(id);
+  };
 
   return (
     <div className="categories">
@@ -10,7 +15,7 @@ function Categories({ items }) {
           items.map((text, id) => (
             <li
               className={isActive === id ? 'active' : ''}
-              onClick={() => setIsActive(id)}
+              onClick={() => onSelectItem(id)}
               key={`${text}_${id}`}>
               {text}
             </li>
