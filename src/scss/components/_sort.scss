@@ -1,17 +1,18 @@
 @import 'variables';
 
 .sort {
+  margin-left: 20px;
   position: relative;
-
   &__label {
     display: flex;
     align-items: center;
 
     svg {
       margin-right: 8px;
+      transform: rotate(180deg);
 
-      &.active {
-        transform: rotate(180deg);
+      &.rotated {
+        transform: rotate(0);
       }
     }
 
@@ -39,7 +40,6 @@
 
     ul {
       overflow: hidden;
-
       li {
         padding: 12px 20px;
         cursor: pointer;
